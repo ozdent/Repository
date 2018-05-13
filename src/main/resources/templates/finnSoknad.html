@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Finn søknad</h1>
+    <form action="#" th:action="@{/sendSoknadsId}" method="post">
+    	<p>Soknadsid: <input type="text" th:field="*{soknadsid}" /></p>
+        <p><input type="submit" value="Finn søknad" /></p>
+    </form>
+</body>
+</html>
