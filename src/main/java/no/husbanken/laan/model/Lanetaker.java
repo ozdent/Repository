@@ -1,5 +1,7 @@
 package no.husbanken.laan.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -13,8 +15,11 @@ import javax.validation.constraints.Size;
 public class Lanetaker {
     @Size(min = 11, max = 11)
     @NotNull
+    @ApiModelProperty(notes = "Fødselsnummer", required =true)
     private String fnr;
+
     @NotNull
+    @ApiModelProperty(notes = "Navn på lånetaker", required =true)
     private String navn;
 
     public String getFnr() {

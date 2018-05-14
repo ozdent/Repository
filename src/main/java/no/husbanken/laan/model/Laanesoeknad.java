@@ -1,5 +1,7 @@
 package no.husbanken.laan.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.util.HashSet;
@@ -15,11 +17,19 @@ public class Laanesoeknad {
     @NotEmpty
     @Valid
     private HashSet<Lanetaker> lanetakere = new HashSet<Lanetaker>();
+
     @Positive
+    @ApiModelProperty(notes = "Lånebeløp", required =true)
     private int lanebelop;
     @NotNull
+
+    @ApiModelProperty(notes = "Behov", required =true)
     private String behov;
+
+    @ApiModelProperty(notes = "Autogenerert søknadsid" , readOnly =true)
     private int soknadsid;
+
+    @ApiModelProperty(notes = "Søknadsstatus" , readOnly =true)
     private String status;
 
     public int getSoknadsid() {
@@ -52,13 +62,5 @@ public class Laanesoeknad {
 
     public void setBehov(String behov) {
         this.behov = behov;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
     }
 }
